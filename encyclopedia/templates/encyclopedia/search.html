@@ -1,0 +1,20 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+Search
+{% endblock %}
+
+{% block body %}
+
+{% for entry in entries %}
+{% if forloop.first %}
+<h1>Result</h1>
+{% endif %}
+<a href="wiki/{{entry}}">{{entry}}</a>
+<hr>
+
+{% empty %}
+<h1>No Result</h1>
+{% endfor %}
+
+{% endblock %}
